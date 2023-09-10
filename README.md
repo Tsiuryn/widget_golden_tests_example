@@ -1,16 +1,46 @@
-# widget_golden_tests_example
+# Widget/Golden tests example
 
-A new Flutter project.
+## Генерация макетов из теста
+```bash
+flutter test --update-goldens
+```
 
-## Getting Started
+## Генерация макетa для одного теста по пути к файлу
+```bash
+flutter test --update-goldens <path_to_test_file>
+```
 
-This project is a starting point for a Flutter application.
+## Запуск тестов
+```bash
+flutter test
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Проверить покрытие тестами
+1. Installing in Mac `lcov`
+```bash
+brew install lcov
+```
+2. Run tests, generate coverage files and convert to HTML
+```bash
+flutter test --coverage
+genhtml coverage/lcov.info -o coverage/html
+```
+3. Open coverage report in browser
+```bash
+open coverage/html/index.html
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## golden-toolkit package
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://pub.dev/packages/golden_toolkit
+
+## Документация
+
+https://docs.flutter.dev/cookbook/testing/widget/introduction
+https://api.flutter.dev/flutter/flutter_test/matchesGoldenFile.html
+
+## Статья
+
+https://medium.com/flutter-community/flutter-golden-tests-compare-widgets-with-snapshots-27f83f266cea
+
+https://habr.com/ru/companies/surfstudio/articles/650557/
