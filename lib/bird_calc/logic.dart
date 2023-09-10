@@ -45,9 +45,9 @@ class AppState {
     balance: 0,
     birds: [Bird(BirdType.constant)],
     items: [
-      BirdItem(type: BirdType.constant, price: 50),
-      BirdItem(type: BirdType.random, price: 100),
-      BirdItem(type: BirdType.combo, price: 150),
+      BirdItem(type: BirdType.constant, price: 25),
+      BirdItem(type: BirdType.random, price: 50),
+      BirdItem(type: BirdType.combo, price: 100),
     ],
   );
 
