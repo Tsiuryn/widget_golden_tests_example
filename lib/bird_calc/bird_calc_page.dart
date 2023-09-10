@@ -4,25 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'logic.dart';
 
-final random = Random();
-final calc = BirdCalc(random);
-final store = Store(AppState.initState, calc);
-
-class BirdCalcPage extends StatefulWidget {
-  static const id = 'BirdCalcPage';
-
-  const BirdCalcPage({Key? key}) : super(key: key);
-
-  @override
-  _BirdCalcPageState createState() => _BirdCalcPageState();
-}
-
-class _BirdCalcPageState extends State<BirdCalcPage> {
-  @override
-  Widget build(BuildContext context) {
-    return MainPage(store: store);
-  }
-}
 
 class Assets {
   static const dashBlueImage = 'assets/bird_calc/dash_blue.png';
@@ -32,10 +13,10 @@ class Assets {
   const Assets._();
 }
 
-class MainPage extends StatelessWidget {
+class BirdCalcPage extends StatelessWidget {
   final Store store;
 
-  const MainPage({
+  const BirdCalcPage({
     Key? key,
     required this.store,
   }) : super(key: key);
@@ -70,7 +51,7 @@ class MainPage extends StatelessWidget {
                             .map(
                               (bird) => BirdView(
                                 key: ValueKey(
-                                    '$MainPage${bird.type}${uniqueKey++}'),
+                                    '$BirdCalcPage${bird.type}${uniqueKey++}'),
                                 type: bird.type,
                                 onTap: () => store.earn(bird),
                               ),
