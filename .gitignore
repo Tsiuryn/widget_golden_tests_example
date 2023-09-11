@@ -1,4 +1,5 @@
-/test/failures/
+# don't check in golden failure output
+**/failures/*.png
 # Miscellaneous
 *.class
 *.log
